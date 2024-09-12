@@ -1,0 +1,125 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+/* Screen Styles */
+.screen {
+    display: none;
+    text-align: center;
+    padding: 20px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Hidden Class */
+.hidden {
+    display: none;
+}
+
+/* Panel Styles */
+#loginSignupScreen, #adminScreen, #categoriesScreen, #userProfileScreen {
+    padding: 20px;
+    margin: auto;
+    max-width: 800px; /* Increased width for better alignment */
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Heading Styles */
+h1 {
+    color: #2c3e50;
+}
+
+h2 {
+    color: #2c3e50;
+}
+
+/* Button Styles */
+button {
+    background-color: #3498db;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+button:hover {
+    background-color: #2980b9;
+}
+
+/* Admin Panel Styles */
+#adminBusinessUsers p, #adminClients p {
+    margin: 5px;
+}
+
+#adminBusinessUsers p {
+    color: black;
+    font-weight: bold;
+}
+
+#adminClients p {
+    margin: 5px;
+}
+
+#adminClients p.new-client {
+    color: green;
+}
+
+/* Categories List Styles */
+#categoriesList {
+    text-align: left; /* Align text to the left for better readability */
+}
+
+#categoriesList .category {
+    margin: 20px 0;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #eafaf1;
+}
+
+#categoriesList .category-name {
+    color: #3498db;
+    font-size: 22px; /* Increased font size for better visibility */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#categoriesList .business {
+    margin-top: 10px;
+    padding: 10px;
+    border-top: 1px solid #ddd;
+}
+
+#categoriesList .business-name {
+    color: #2c3e50;
+    font-weight: bold;
+}
+
+#categoriesList .business-address, 
+#categoriesList .business-contact {
+    color: #555;
+}
+
+/* Login/Signup Panel Styles */
+#loginPanel, #signupPanel {
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#signupPanel {
+    display: none;
+}

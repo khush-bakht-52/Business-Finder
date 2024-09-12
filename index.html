@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Finder</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Splash Screen -->
+    <div id="welcomeScreen" class="screen">
+        <h1>Welcome to Business Finder</h1>
+        <button class="get-started">Get Started</button>
+    </div>
+
+    <!-- Login/Signup Screen -->
+    <div id="loginSignupScreen" class="screen hidden">
+        <div id="loginPanel">
+            <h2>Login</h2>
+            <input type="email" id="loginEmail" placeholder="Email" required>
+            <input type="password" id="loginPassword" placeholder="Password" required>
+            <button onclick="login()">Login</button>
+            <button onclick="navigateTo('signupPanel')">Sign Up</button>
+        </div>
+        <div id="signupPanel" class="hidden">
+            <h2>Sign Up</h2>
+            <input type="text" id="signupName" placeholder="Name" required>
+            <input type="email" id="signupEmail" placeholder="Email" required>
+            <input type="password" id="signupPassword" placeholder="Password" required>
+            <input type="password" id="signupConfirmPassword" placeholder="Confirm Password" required>
+            <button onclick="signup()">Sign Up</button>
+            <button onclick="navigateTo('loginPanel')">Back to Login</button>
+        </div>
+    </div>
+
+    <!-- Admin Panel -->
+    <div id="adminScreen" class="screen hidden">
+        <button onclick="navigateTo('welcomeScreen')">Back</button>
+        <h2>Admin Panel</h2>
+        <div id="adminBusinessUsers"></div>
+        <div id="adminClients"></div>
+    </div>
+
+    <!-- Categories Screen -->
+    <div id="categoriesScreen" class="screen hidden">
+        <h2>Categories</h2>
+        <div id="categoriesList">
+            <div class="category">
+                <h3 class="category-name">Food</h3>
+                <div class="business">
+                    <p class="business-name">Name: <strong>Desi Delight</strong></p>
+                    <p class="business-address">Address: <strong>Lahore</strong></p>
+                    <p class="business-contact">Contact: <strong>123-456-7890</strong></p>
+                </div>
+                <div class="business">
+                    <p class="business-name">Name: <strong>Biryani House</strong></p>
+                    <p class="business-address">Address: <strong>Karachi</strong></p>
+                    <p class="business-contact">Contact: <strong>321-654-9870</strong></p>
+                </div>
+                <div class="business">
+                    <p class="business-name">Name: <strong>Chaat Corner</strong></p>
+                    <p class="business-address">Address: <strong>Islamabad</strong></p>
+                    <p class="business-contact">Contact: <strong>456-789-0123</strong></p>
+                </div>
+                <div class="business">
+                    <p class="business-name">Name: <strong>Kabab House</strong></p>
+                    <p class="business-address">Address: <strong>Multan</strong></p>
+                    <p class="business-contact">Contact: <strong>234-567-8901</strong></p>
+                </div>
+            </div>
+            <div class="category">
+                <h3 class="category-name">Healthcare</h3>
+                <div class="business">
+                    <p class="business-name">Name: <strong>Health Clinic</strong></p>
+                    <p class="business-address">Address: <strong>Karachi</strong></p>
+                    <p class="business-contact">Contact: <strong>987-654-3210</strong></p>
+                </div>
+                <div class="business">
+                    <p class="business-name">Name: <strong>City Hospital</strong></p>
+                    <p class="business-address">Address: <strong>Lahore</strong></p>
+                    <p class="business-contact">Contact: <strong>654-321-0987</strong></p>
+                </div>
+                <div class="business">
+                    <p class="business-name">Name: <strong>Wellness Center</strong></p>
+                    <p class="business-address">Address: <strong>Islamabad</strong></p>
+                    <p class="business-contact">Contact: <strong>321-098-7654</strong></p>
+                </div>
+                <div class="business">
+                    <p class="business-name">Name: <strong>Family Clinic</strong></p>
+                    <p class="business-address">Address: <strong>Peshawar</strong></p>
+                    <p class="business-contact">Contact: <strong>567-890-1234</strong></p>
+                </div>
+            </div>
+            <div class="category">
+                <h3 class="category-name">Hotels</h3>
+                <div class="business">
+                    <p class="business-name">Name: <strong>Luxury Stay</strong></p>
+                    <p class="business-address">Address: <strong>Islamabad</strong></p>
+                    <p class="business-contact">Contact: <strong>111-222-3333</strong></p>
+                </div>
+                <div class="business">
+                    <p class="business-name">Name: <strong>Comfort Inn</strong></p>
+                    <p class="business-address">Address: <strong>Karachi</strong></p>
+                    <p class="business-contact">Contact: <strong>444-555-6666</strong></p>
+                </div>
+                <div class="business">
+                    <p class="business-name">Name: <strong>Relax Resort</strong></p>
+                    <p class="business-address">Address: <strong>Lahore</strong></p>
+                    <p class="business-contact">Contact: <strong>777-888-9999</strong></p>
+                </div>
+                <div class="business">
+                    <p class="business-name">Name: <strong>Elegant Suites</strong></p>
+                    <p class="business-address">Address: <strong>Quetta</strong></p>
+                    <p class="business-contact">Contact: <strong>888-999-0000</strong></p>
+                </div>
+            </div>
+            <div class="category">
+                <h3 class="category-name">Education</h3>
+                <div class="business">
+                    <p class="business-name">Name: <strong>Smart School</strong></p>
+                    <p class="business-address">Address: <strong>Lahore</strong></p>
+                    <p class="business-contact">Contact: <strong>444-555-6666</strong></p>
+                </div>
+                <div class="business">
+                    <p class="business-name">Name: <strong>Bright Future Academy</strong></p>
+                    <p class="business-address">Address: <strong>Karachi</strong></p>
+                    <p class="business-contact">Contact: <strong>777-888-9999</strong></p>
+                </div>
+                <div class="business">
+                    <p class="business-name">Name: <strong>Learning Hub</strong></p>
+                    <p class="business-address">Address: <strong>Islamabad</strong></p>
+                    <p class="business-contact">Contact: <strong>123-456-7890</strong></p>
+                </div>
+                <div class="business">
+                    <p class="business-name">Name: <strong>Academic Institute</strong></p>
+                    <p class="business-address">Address: <strong>Rawalpindi</strong></p>
+                    <p class="business-contact">Contact: <strong>555-666-7777</strong></p>
+                </div>
+            </div>
+        </div>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <!-- User Profile Screen -->
+    <div id="userProfileScreen" class="screen hidden">
+        <h2>User Profile</h2>
+        <button onclick="navigateTo('categoriesScreen')">Back to Categories</button>
+        <button onclick="updateProfile()">Update Profile</button>
+        <button onclick="logout()">Logout</button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
